@@ -1,0 +1,61 @@
+﻿<Window x:Class="TravelAgency.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TravelAgency"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Background="#6A0DAD">
+            <Image Source="https://www.childinthecity.org/wp-content/uploads/2019/01/architecture-big-city-buildings-1209978.jpg" Stretch="UniformToFill"/>
+        </Border>
+
+        <Grid Grid.Column="1" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Добро пожаловать" 
+                       FontSize="26" 
+                       FontWeight="Bold" 
+                       Foreground="#6A0DAD" 
+                       TextAlignment="Center" />
+
+            <StackPanel Grid.Row="1" Margin="25,0,25,10">
+                <TextBlock  Text="Логин" Foreground="#6A0DAD"/>
+                <TextBox x:Name="fieldLogin" Height="30" BorderBrush="#6A0DAD" BorderThickness="1" Background="White"/>
+
+                <TextBlock Text="Пароль" Foreground="#6A0DAD" Margin="0,10,0,0"/>
+                <PasswordBox x:Name="fieldPassword" Height="30" BorderBrush="#6A0DAD" BorderThickness="1" Background="White"/>
+            </StackPanel>
+
+            <Button x:Name="btnLogin" Click="btnLogin_Click" Grid.Row="2" 
+                    Content="Войти" 
+                    Height="40" 
+                    Background="#6A0DAD" 
+                    Foreground="White" 
+                    FontWeight="Bold"
+                    BorderThickness="0"
+                    Margin="0,10,0,0"
+                    Cursor="Hand"/>
+
+            <TextBlock Grid.Row="3" Text="Забыли пароль?" 
+                       Foreground="#6A0DAD" 
+                       FontSize="12" 
+                       HorizontalAlignment="Right" 
+                       VerticalAlignment="Bottom"
+                       Margin="0,10,0,0"
+                       Cursor="Hand"/>
+        </Grid>
+    </Grid>
+</Window>

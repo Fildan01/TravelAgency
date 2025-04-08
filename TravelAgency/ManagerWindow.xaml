@@ -1,0 +1,57 @@
+﻿<Window x:Class="TravelAgency.ManagerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TravelAgency"
+        mc:Ignorable="d"
+        Title="Управление турами" Height="600" Width="1000">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Левая часть: Форма + карточки -->
+        <StackPanel Grid.Column="0" Margin="10" HorizontalAlignment="Stretch">
+            <TextBlock Text="Добавление тура" FontSize="16" FontWeight="Bold" Margin="0,0,0,10" />
+
+            <StackPanel Orientation="Vertical" Margin="0,0,0,20">
+                <TextBlock Text="Название" />
+                <TextBox x:Name="TitleBox" Margin="0,5" />
+
+                <TextBlock Text="Описание" />
+                <TextBox x:Name="DescriptionBox" Margin="0,5" AcceptsReturn="True" Height="60" />
+
+                <TextBlock Text="Ссылка на изображение" />
+                <TextBox x:Name="ImageUrlBox" Margin="0,5" />
+
+                <TextBlock Text="Цена" />
+                <TextBox x:Name="PriceBox" Margin="0,5" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Content="Добавить тур" Margin="0,10,0,0" Width="120" Click="Button_Click_1" Background="#6A0DAD" 
+Foreground="White"  />
+                    <Button Content="Удалить тур" Margin="0,10,0,0" Width="120" Click="Button_Click" Background="#6A0DAD" 
+Foreground="White" />
+                </StackPanel>
+            </StackPanel>
+
+            <Separator Margin="0,10"/>
+
+            <TextBlock Text="Список всех туров" FontSize="14" FontWeight="SemiBold" Margin="0,0,0,10"/>
+            <ListBox x:Name="listTour" SelectionChanged="listTour_SelectionChanged">
+                
+            </ListBox>
+        </StackPanel>
+
+        <!-- Правая часть: Панель отчётов -->
+        <StackPanel Grid.Column="1" Margin="10" VerticalAlignment="Top">
+            <TextBlock Text="Отчёты" FontSize="16" FontWeight="Bold" Margin="0,0,0,10" />
+            <Button Content="Все туры" Margin="0,5" Click="Button_Click_2" Background="#6A0DAD" 
+Foreground="White" />
+            <Button Content="Туры пользователя" Margin="0,5" Click="Button_Click_3" Background="#6A0DAD" 
+Foreground="White" />
+            <!-- Добавь другие отчёты по желанию -->
+        </StackPanel>
+    </Grid>
+</Window>
